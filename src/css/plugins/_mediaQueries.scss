@@ -1,0 +1,86 @@
+// http://daniel.furzeface.com/blog/my-sass-media-query-mixin/
+//=My breakpoint variables 
+//Usually kept in _variables.scss
+/*
+$breakpoint-extra-small: 20em;    //320px
+$breakpoint-small: 30em;          //480px
+$breakpoint-medium: 50em;         //800px
+$breakpoint-extra-medium: 65em;   //1040px
+$breakpoint-large: 80em;          //1280px
+$breakpoint-extra-large: 100em;   //1600px
+*/
+
+// Custom, iPhone Retina (min-width : 320px)
+// Extra Small Devices, Phones (min-width : 480px)
+//- Small Devices, Tablets (min-width : 768px) 
+// Medium Devices, Desktops (min-width : 992px)
+//- Large Devices, Wide Screens (min-width : 1200px) 
+$breakpoint-XS: 320px;
+$breakpoint-S: 480px;
+$breakpoint-M: 768px;
+$breakpoint-XM: 992px;
+$breakpoint-L: 1200px;
+$breakpoint-XL: 1600px;
+
+//=Media Queries Mixin
+//Usually kept in _mixins.scss
+@mixin MQ($canvas) {
+    @if $canvas == XS {
+        @media all and (min-width: $breakpoint-XS) {
+            @content;
+        }
+    }
+    @else if $canvas == S {
+        @media all and (min-width: $breakpoint-S) {
+            @content;
+        }
+    }
+    @else if $canvas == M {
+        @media all and (min-width: $breakpoint-M) {
+            @content;
+        }
+    }
+    @else if $canvas == XM {
+        @media all and (min-width: $breakpoint-XM) {
+            @content;
+        }
+    }
+    @else if $canvas == L {
+        @media all and (min-width: $breakpoint-L) {
+            @content;
+        }
+    }
+    @else if $canvas == XL {
+        @media all and (min-width: $breakpoint-XL) {
+            @content;
+        }
+    }
+}
+//=Usage Example
+/*
+html {
+  font-size: 65%;
+
+  @include MQ(XS) {
+    font-size: 75%;
+  }
+
+  @include MQ(S) {
+    font-size: 85%;
+  }
+
+  @include MQ(M) {
+    font-size: 100%;
+  }
+
+  @include MQ(L) {
+    font-size: 120%;
+  }
+
+  @include MQ(XL) {
+    font-size: 125%;
+  }
+}
+*/
+
+//easy peasy!

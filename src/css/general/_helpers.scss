@@ -1,0 +1,18 @@
+.hidden {
+    display: none!important;
+    visibility: hidden;
+}
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.ie7.clearfix {
+    zoom: 1;
+}
+// for text replacement
+.hide-text{
+	@include hide-text(left);
+}

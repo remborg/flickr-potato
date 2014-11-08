@@ -1,0 +1,36 @@
+Always 
+    Start general.
+    Move towards specifics as slowly as possible.
+    Never divide based on any external concepts (type/layout, screen-sizes, etc).
+
+Folder structure
+================
+
+Base
+----
+imports and settings - no CSS output.
+  - e.g _grid, _colors, _rhythm, etc.
+
+General
+-------
+Initial CSS baseline with resets, defaults, font imports, and classes to extend.
+  - e.g. _reset, _root, _fonts, _icons, _defaults, etc.
+
+Layout
+------
+The rough outline of the site structure. Not "layout" as a set of properties excluding type, "layout" as the overall site template which might well include typography. 
+  - e.g. _banner, _nav, _main, _contentinfo, etc.
+
+Modules
+-------
+All the details. First by effect (classes/general), then by widget (ids/specifics).
+  - e.g. _users, _admin, _product-lists etc.
+
+Plugins
+-------
+3rd-party code
+
+Overrides
+---------
+to handle unavoidable location-specific overrides to a widget.
+
