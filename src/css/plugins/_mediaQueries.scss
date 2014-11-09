@@ -21,39 +21,99 @@ $breakpoint-M: 768px;
 $breakpoint-XM: 992px;
 $breakpoint-L: 1200px;
 $breakpoint-XL: 1600px;
-
 //=Media Queries Mixin
 //Usually kept in _mixins.scss
 @mixin MQ($canvas) {
-    @if $canvas == XS {
+    @if $canvas XS {
         @media all and (min-width: $breakpoint-XS) {
             @content;
         }
     }
-    @else if $canvas == S {
+    @else if $canvas S {
         @media all and (min-width: $breakpoint-S) {
             @content;
         }
     }
-    @else if $canvas == M {
+    @else if $canvas M {
         @media all and (min-width: $breakpoint-M) {
             @content;
         }
     }
-    @else if $canvas == XM {
+    @else if $canvas XM {
         @media all and (min-width: $breakpoint-XM) {
             @content;
         }
     }
-    @else if $canvas == L {
+    @else if $canvas L {
         @media all and (min-width: $breakpoint-L) {
             @content;
         }
     }
-    @else if $canvas == XL {
+    @else if $canvas XL {
         @media all and (min-width: $breakpoint-XL) {
             @content;
         }
+    }
+}
+@media all and (max-width: $breakpoint-XS) {
+    .gt-XS {
+        display: none;
+    }
+}
+@media all and (max-width: $breakpoint-S) {
+    .gt-S {
+        display: none;
+    }
+}
+@media all and (max-width: $breakpoint-M) {
+    .gt-M {
+        display: none;
+    }
+}
+@media all and (max-width: $breakpoint-XM) {
+    .gt-XM {
+        display: none;
+    }
+}
+@media all and (max-width: $breakpoint-L) {
+    .gt-L {
+        display: none;
+    }
+}
+@media all and (max-width: $breakpoint-XL) {
+    .gt-XL {
+        display: none;
+    }
+}
+
+@media all and (min-width: $breakpoint-XS) {
+    .lt-XS {
+        display: none;
+    }
+}
+@media all and (min-width: $breakpoint-S) {
+    .lt-S {
+        display: none;
+    }
+}
+@media all and (min-width: $breakpoint-M) {
+    .lt-M {
+        display: none;
+    }
+}
+@media all and (min-width: $breakpoint-XM) {
+    .lt-XM {
+        display: none;
+    }
+}
+@media all and (min-width: $breakpoint-L) {
+    .lt-L {
+        display: none;
+    }
+}
+@media all and (min-width: $breakpoint-XL) {
+    .lt-XL {
+        display: none;
     }
 }
 //=Usage Example
