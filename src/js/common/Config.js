@@ -15,5 +15,5 @@ function router($stateProvider, $urlRouterProvider) {
         });
 }
 
-angular.module('ContactApp')
+angular.module('potatoFeed')
     .config(['$stateProvider', '$urlRouterProvider', router]);

@@ -17,70 +17,70 @@ $breakpoint-extra-large: 100em;   //1600px
 //- Large Devices, Wide Screens (min-width : 1200px) 
 $breakpoint-XS: 320px;
 $breakpoint-S: 480px;
-$breakpoint-M: 768px;
+$breakpoint-M: 800px;
 $breakpoint-XM: 992px;
 $breakpoint-L: 1200px;
 $breakpoint-XL: 1600px;
 //=Media Queries Mixin
 //Usually kept in _mixins.scss
 @mixin MQ($canvas) {
-    @if $canvas XS {
+    @if $canvas == XS {
         @media all and (min-width: $breakpoint-XS) {
             @content;
         }
     }
-    @else if $canvas S {
+    @else if $canvas == S {
         @media all and (min-width: $breakpoint-S) {
             @content;
         }
     }
-    @else if $canvas M {
+    @else if $canvas == M {
         @media all and (min-width: $breakpoint-M) {
             @content;
         }
     }
-    @else if $canvas XM {
+    @else if $canvas == XM {
         @media all and (min-width: $breakpoint-XM) {
             @content;
         }
     }
-    @else if $canvas L {
+    @else if $canvas == L {
         @media all and (min-width: $breakpoint-L) {
             @content;
         }
     }
-    @else if $canvas XL {
+    @else if $canvas == XL {
         @media all and (min-width: $breakpoint-XL) {
             @content;
         }
     }
 }
-@media all and (max-width: $breakpoint-XS) {
+@media all and (max-width: $breakpoint-XS - 1px) {
     .gt-XS {
         display: none;
     }
 }
-@media all and (max-width: $breakpoint-S) {
+@media all and (max-width: $breakpoint-S - 1px) {
     .gt-S {
         display: none;
     }
 }
-@media all and (max-width: $breakpoint-M) {
+@media all and (max-width: $breakpoint-M - 1px) {
     .gt-M {
         display: none;
     }
 }
-@media all and (max-width: $breakpoint-XM) {
+@media all and (max-width: $breakpoint-XM - 1px) {
     .gt-XM {
         display: none;
     }
 }
-@media all and (max-width: $breakpoint-L) {
+@media all and (max-width: $breakpoint-L - 1px) {
     .gt-L {
         display: none;
     }
 }
-@media all and (max-width: $breakpoint-XL) {
+@media all and (max-width: $breakpoint-XL - 1px) {
     .gt-XL {
         display: none;
     }

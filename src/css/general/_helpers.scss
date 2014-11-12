@@ -12,7 +12,12 @@
 .ie7.clearfix {
     zoom: 1;
 }
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 // for text replacement
-.hide-text{
-	@include hide-text(left);
+.hide-text {
+    @include hide-text(left);
 }
