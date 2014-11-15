@@ -1,5 +1,5 @@
 <figure class="clearfix" ng-repeat="item in items">
-    <div class="feed-picture-wrapper">
+    <div class="feed-picture-wrapper" ui-sref="view({id:$index})">
         <div class="feed-picture" ng-style="{'background-image':'url({{item.media.m}})'}">
         </div>
     </div>

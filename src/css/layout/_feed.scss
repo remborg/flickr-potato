@@ -24,17 +24,17 @@
         display: inline;
     }
 }
-.feed-link {
+%animate-link-hover{
     @include transition(color, 0.2s, ease-in-out);
     &:hover {
         color: $blue-dianne;
     }
 }
 .feed-link-author {
-    @extend .feed-link;
+    @extend %animate-link-hover;
 }
 .feed-link-toFlick {
-    @extend .feed-link;
+    @extend %animate-link-hover;
 }
 .feed-spinner{
     @extend .spinner;
