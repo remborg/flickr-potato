@@ -8,18 +8,31 @@
     z-index: 100;
     @include opacity(0.5);
 }
+.popup-container-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 101;
+    overflow-y: auto;
+    overflow-x: hidden;
+    left: 50%;
+    padding-left: 1em;
+    margin: 1em;
+    margin-left: -140px;
+    @include MQ(M) {
+        margin-left: -340px;
+    }
+}
 .popup-container {
     background-color: #FFF;
-    position: fixed;
-    z-index: 101;
-    top: 50%;
-    left: 50%;
-    @include transform(translate(-50%, -50%));
     padding: 0 20px 20px;
     width: 280px;
     @include MQ(M) {
         width: 680px;
     }
+    /*
+    overflow: auto;
+    height: 90%;*/
 }
 .popup-button-back-top {
     right: 20px;
@@ -59,15 +72,24 @@
 .item-author {
     @extend %animate-link-hover;
 }
+.item-tags {
+    margin: 1em 0 0 -5px;
+    float: left;
+}
 .item-tags-tag {
     margin: 0 5px;
+    float: left;
+}
+.item-picture-wrapper {
+    text-align: center;
+    width: 100%;
 }
 .item-picture {
     margin: 1em 1em 0 0;
+    max-width: 240px;
     @include MQ(M) {
         float: left;
     }
-    max-width: 240px;
 }
 .item-copy, .item-tags {
     @include MQ(M) {

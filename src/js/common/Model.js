@@ -25,6 +25,23 @@ function feedFactory($http, $filter, $q) {
                 deffered.resolve(factory.feedData);
             }
             return deffered.promise;
+        },
+        getItem: function(itemId) {
+            var deffered = $q.defer();
+            factory.getFeed().then(
+                function(result) {
+                    var item = null;
+                    if (result.items !== undefined)
+                        item = result.items[itemId];
+                    deffered.resolve(item);
+                },
+                function(data, status, headers, config) {
+                    console.log(data, status, headers, config);
+                    deffered.reject('Error: Can\'t retrieve data');
+                }
+            );
+            return deffered.promise;
+
         }
     };
     return factory;

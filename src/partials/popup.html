@@ -1,16 +1,21 @@
-<div class="popup-container">
-    <div class="popup-button-back-top" ui-sref="home">BACK</div>
-    <h1 class="item-title">Title</h1>
+<div class="popup-container-wrapper">
+    <div class="popup-container clearfix" ng-controller="itemController">
+        <div class="popup-button-back-top" ui-sref="home">BACK</div>
+        <h1 class="item-title" ng-bind="item.title"></h1>
 
-    <a href="#" class="item-author" ng-href="{{item.link | getAuthor}}">Photo author</a> |
-    <span class="item-publication">Published: {{item.published | feedDate}}</span>
+        <a href="#" class="item-author" ng-href="{{item.link | getAuthor}}">Photo author</a> |
+        <span class="item-publication">Published: {{item.published | feedDate}}</span>
 
-    <img class="item-picture" ng-src="http://placehold.it/240x10">
-    <p class="item-copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi iusto dolore deserunt est fuga ullam, quam earum quas impedit placeat expedita voluptatibus dolorem ipsa non commodi ea. Voluptates, hic, voluptatem.
-    <br>
-    <br>Tags:
-        <a href="#" class="item-tags-tag">tag1</a>
-        <a href="#" class="item-tags-tag">tag2</a>
-    </p>
+        <div class="item-picture-wrapper">
+            <img class="item-picture" ng-src="{{item.media.m}}">
+        </div>
+        <p class="item-copy">
+            {{description}}
+            <span class="item-tags">
+                <span class="item-tags-tag">Tags:</span>
+                <a href="#" class="item-tags-tag" ng-repeat="tag in tags">{{tag}}</a>
+            </span>
+        </p>
+    </div>
 </div>
 <div class="popup-background"></div>
