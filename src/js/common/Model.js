@@ -1,19 +1,25 @@
 function feedFactory($http, $filter, $q) {
-    var feedUrl = 'http://api.flickr.com/services/feeds/photos_public.gne?tags=potato&tagmode=all&format=json';
+    var feedUrl = 'http://api.flickr.com/services/feeds/photos_public.gne';
     var factory = {
+        feedTag: null,
         feedData: null,
-        getFeed: function() {
+        getFeed: function(tags) {
             var deffered = $q.defer();
-            if (factory.feedData === null) {
+            if (tags !== undefined && tags !== factory.feedTag) {
                 $http({
                         method: 'JSONP',
                         url: feedUrl,
                         params: {
-                            'jsoncallback': 'JSON_CALLBACK'
+                            'jsoncallback': 'JSON_CALLBACK',
+                            'tagmode': 'all',
+                            'format': 'json',
+                            'tags': tags
                         }
                     })
                     .then(function(response) {
+                            //angular.extend(factory.feedData, response.data);
                             factory.feedData = response.data;
+                            factory.feedTag = tags;
                             deffered.resolve(factory.feedData);
                         },
                         function(data, status, headers, config) {
@@ -31,8 +37,9 @@ function feedFactory($http, $filter, $q) {
             factory.getFeed().then(
                 function(result) {
                     var item = null;
-                    if (result.items !== undefined)
+                    if (result !== null) {
                         item = result.items[itemId];
+                    }
                     deffered.resolve(item);
                 },
                 function(data, status, headers, config) {

@@ -1,20 +1,22 @@
-<figure class="clearfix" ng-repeat="item in items">
-    <div class="feed-picture-wrapper" ui-sref="view({id:$index})">
-        <div class="feed-picture" ng-style="{'background-image':'url({{item.media.m}})'}">
+<div item>
+    <figure class="clearfix" ng-repeat="item in items">
+        <div class="feed-picture-wrapper" ui-sref="view({id:$index})">
+            <div class="feed-picture" ng-style="{'background-image':'url({{item.media.m}})'}">
+            </div>
         </div>
-    </div>
-    <figcaption class="feed-caption">
-        <h2 class="feed-title" ng-bind="item.title"></h2>
-        <div class="gt-M">
-            <a href="#" class="feed-link-author" ng-href="{{item.link | getAuthor}}">Photo author</a>
-            <p class="feed-copy" >Published: {{item.published | feedDate}}</p>
-            <a href="#" class="feed-link-toFlick" ng-href="{{item.link}}">View on Flickr</a>
-        </div>
-        <div class="lt-M">
-            <p class="feed-copy" >Published: {{item.published | feedDate}}</p>
-            <a href="#" class="feed-link-author" ng-href="{{item.link | getAuthor}}">Photo author</a>
-            <a href="#" class="feed-link-toFlick" ng-href="{{item.link}}">View on Flickr</a>
-        </div>
-    </figcaption>
-</figure>
-<div class="feed-spinner" id="feed-hidden" ng-show="loading"></div>
+        <figcaption class="feed-caption">
+            <h2 class="feed-title" ng-bind="item.title"></h2>
+            <div class="gt-M">
+                <a href="#" class="feed-link-author" ng-href="{{item.link | getAuthor}}">Photo author</a>
+                <p class="feed-copy">Published: {{item.published | feedDate}}</p>
+                <a href="#" class="feed-link-toFlick" ng-href="{{item.link}}">View on Flickr</a>
+            </div>
+            <div class="lt-M">
+                <p class="feed-copy">Published: {{item.published | feedDate}}</p>
+                <a href="#" class="feed-link-author" ng-href="{{item.link | getAuthor}}">Photo author</a>
+                <a href="#" class="feed-link-toFlick" ng-href="{{item.link}}">View on Flickr</a>
+            </div>
+        </figcaption>
+    </figure>
+    <div class="feed-spinner" id="feed-hidden" ng-show="loading"></div>
+</div>

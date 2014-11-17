@@ -1,17 +1,18 @@
 function mainController($scope, $stateParams, feedFactory) {
     var vm = this;
 
-    $scope.loading = true;
-    console.log('mainController');
-    
-    feedFactory.getFeed().then(
-        function(result) {
-            $scope.items = result.items;
-      		$scope.loading = false;
-            console.log('$scope.items', $scope.items);
-        }
-    );
-	
+    $scope.getFeeds = function(tags) {
+        $scope.loading = true;
+
+        feedFactory.getFeed(tags).then(
+            function(result) {
+                if (result !== null) {
+                    $scope.items = result.items;
+                }
+                $scope.loading = false;
+            }
+        );
+    };
 }
 
 angular.module('potatoFeed', ['ui.router', 'ngAnimate'])

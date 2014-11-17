@@ -10,10 +10,13 @@
             <img class="item-picture" ng-src="{{item.media.m}}">
         </div>
         <p class="item-copy">
-            {{description}}
-            <span class="item-tags">
+            {{description}}{{tags.length}}
+            <span class="item-tags" ng-if="tags.length > 0">
                 <span class="item-tags-tag">Tags:</span>
-                <a href="#" class="item-tags-tag" ng-repeat="tag in tags">{{tag}}</a>
+                <a ui-sref="tags({tags:tag})" class="item-tags-tag" ng-repeat="tag in tags" href="#">{{tag}}</a>
+            </span>
+            <span class="item-tags" ng-if="tags.length == 0">
+                <span class="item-tags-tag">No tags...</span>
             </span>
         </p>
     </div>

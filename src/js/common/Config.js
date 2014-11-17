@@ -13,6 +13,14 @@ function router($stateProvider, $urlRouterProvider) {
                 }
             }
         })
+        .state('tags', {
+            url: "/tags/:tags",
+            views: {
+                "main": {
+                    templateUrl: "../partials/main.html"
+                },
+            }
+        })
         .state('view', {
             url: "/view/:id",
             views: {
