@@ -1,0 +1,16 @@
+
+.uiview.ng-enter, .uiview.ng-leave {
+    @include transition(all, .5s, ease-in-out);
+}
+.uiview.ng-enter {
+    @include opacity(0);
+}
+.uiview.ng-enter-active {
+    @include opacity(1);
+}
+.uiview.ng-leave {
+    @include opacity(1);
+}
+.uiview.ng-leave-active {
+    @include opacity(0);
+}
