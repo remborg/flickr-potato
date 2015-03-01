@@ -164,7 +164,27 @@ module.exports = function(grunt) {
                     dest: '<%= vars.folderRelease %>'
                 }]
             }
+        },
+
+        jasmine: {
+            debug: {
+                // src: ['../js/**/*.js', '!js/libs/**'],
+                src: ['../debug/js/app.js'],
+                // src: ['js/*.js'],
+                options: {
+                    specs: 'tests/spec/*Spec.js',
+                    helpers: 'tests/spec/*Helper.js',
+                    // template : 'src/custom.tmpl',
+                    vendor: [
+                        "../debug/js/libs/angular/angular.min.js",
+                        "../debug/js/libs/angular-ui-router/release/angular-ui-router.min.js",
+                        "../debug/js/libs/angular-animate/angular-animate.min.js",
+                        "../debug/js/libs/angular-mocks/angular-mocks.js"
+                    ]
+                }
+            }
         }
+
     });
 
     grunt.registerTask('default', ['jshint', 'concat:debug', 'wrap:debug', 'compass:debug', 'copy:debug', 'copy:debugLibs', 'imagemin:debug']);
